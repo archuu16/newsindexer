@@ -28,7 +28,48 @@ public class Runner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String ipDir = args[0];
+		
+		String ipDir = "/home/archana/Downloads/training";
+		
+		File ipDirectory = new File(ipDir);
+		String[] catDirectories = ipDirectory.list();
+		
+		String[] files;
+		File dir;
+		Document d = null;
+		
+		
+		try {
+			for (String cat : catDirectories) {
+				dir = new File(ipDir+ File.separator+ cat);
+				files = dir.list();
+				
+				
+				if (files == null)
+					continue;
+				
+				for (String f : files) {
+					try {
+						d = Parser.parse(dir.getAbsolutePath() + File.separator +f);
+						//writer.addDocument(d);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} 
+					break;
+					
+				}
+				
+			}
+			
+			//writer.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+			
+		/*String ipDir = args[0];
 		String indexDir = args[1];
 		//more? idk!
 		
@@ -40,7 +81,7 @@ public class Runner {
 		
 		Document d = null;
 		IndexWriter writer = new IndexWriter(indexDir);
-		
+		 
 		try {
 			for (String cat : catDirectories) {
 				dir = new File(ipDir+ File.separator+ cat);
@@ -67,6 +108,6 @@ public class Runner {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+*/	}
 
 }

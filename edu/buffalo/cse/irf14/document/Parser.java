@@ -2,6 +2,7 @@
  * 
  */
 package edu.buffalo.cse.irf14.document;
+import java.util.Scanner;
 
 /**
  * @author nikhillo
@@ -16,6 +17,16 @@ public class Parser {
 	 */
 	public static Document parse(String filename) throws ParserException {
 		// TODO YOU MUST IMPLEMENT THIS
+		
+		 System.out.println(filename);
+	/*	Scanner input = new Scanner(filename);
+		while(input.hasNext()) {
+		    //String nextToken = input.next();
+		    String nextLine = input.nextLine();
+		    System.out.println(nextLine);
+		    
+		}
+		input.close();*/
 		return null;
 	}
 
